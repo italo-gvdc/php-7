@@ -5,9 +5,7 @@
 	</head>
 
 	<body>
-
 		<?php
-
 			//string
 			$nome = 'Jorge Sant Ana';
 
@@ -23,7 +21,6 @@
 			//... lógica ...//
 
 			$idade = '30';
-
 		?>
 
 		<h1>Ficha cadastral</h1>
@@ -32,6 +29,5 @@
 		<p>Idade: <?= $idade ?></p>
 		<p>Peso: <?= $peso ?></p>
 		<p>Fumante: <?= $fumante_sn ?></p>
-		
 	</body>
 </html>
