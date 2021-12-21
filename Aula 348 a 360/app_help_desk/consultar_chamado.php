@@ -9,9 +9,13 @@ require_once "validador_acesso.php" ?>
   //enquanto houver registros (linhas) a serem recuperados
   while(!feof($arquivo)) { //testa pelo fim de um arquivo
     //linhas
+    $registro = fgets($arquivo);
+    echo $registro. '<br />';
 
   }
 
+  //fechar o arquivo aberto
+  fclose($arquivo);
   //...
  ?>
 
