@@ -15,6 +15,7 @@
     $texto = $titulo.'#'.$categoria.'#'.$descricao.PHP_EOL;
     
     //http://php.net/manual/pt_BR/function.fopen.php
+    
     //Abrindo o arquivo
     $arquivo = fopen('arquivo.hd','a');
 
