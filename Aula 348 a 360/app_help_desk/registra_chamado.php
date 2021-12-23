@@ -1,13 +1,13 @@
 <?php
-    
-    session_start();
+
+session_start();
     //Montando o texto
     $titulo = str_replace('#','-',$_POST['titulo']);
     $categoria = str_replace('#','-',$_POST['categoria']);
     $descricao = str_replace('#','-',$_POST['descricao']);
     //implode('#',$_POST);
 
-    $texto = $SESSION['id'] . '#' . $titulo.'#'.$categoria.'#'.$descricao.PHP_EOL;
+    $texto = $_SESSION['id'].'#'.$titulo.'#'.$categoria.'#'.$descricao.PHP_EOL;
     
     //http://php.net/manual/pt_BR/function.fopen.php
     //Abrindo o arquivo
