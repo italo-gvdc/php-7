@@ -46,10 +46,10 @@ foreach($usuarios_app as $user){
 
         $_SESSION['autenticado'] = 'SIM';
         $_SESSION['id'] = $usuario_id;
-        //header('Location: home.php');
+        header('Location: home.php');
     }else{  
         $_SESSION['autenticado'] = 'NÃO';
-        //header('Location: index.php?login=erro');
+        header('Location: index.php?login=erro');
       }
 
 
