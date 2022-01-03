@@ -3,7 +3,7 @@
 <?php
 
   //chamados
-  $chamados = array();
+  $chamados = array(); 
 
   echo $_SESSION['perfil_id'];
 
