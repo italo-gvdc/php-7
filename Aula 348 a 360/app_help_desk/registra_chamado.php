@@ -1,24 +1,24 @@
 <?php
+	session_start();
 
-session_start();
-    //Montando o texto
-    $titulo = str_replace('#','-',$_POST['titulo']);
-    $categoria = str_replace('#','-',$_POST['categoria']);
-    $descricao = str_replace('#','-',$_POST['descricao']);
-    //implode('#',$_POST);
+	//estamos trabalhando na montagem do texto
+	$titulo = str_replace('#', '-', $_POST['titulo']);
+	$categoria = str_replace('#', '-', $_POST['categoria']);
+	$descricao = str_replace('#', '-', $_POST['descricao']);
 
-    $texto = $_SESSION['id'].'#'.$titulo.'#'.$categoria.'#'.$descricao.PHP_EOL;
-    
-    //http://php.net/manual/pt_BR/function.fopen.php
-    //Abrindo o arquivo
-    $arquivo = fopen('arquivo.hd','a');
+	//implode('#', $_POST);
 
-    //Escrevendo texto no arquivo
-    fwrite($arquivo,$texto);
+	$texto = $_SESSION['id'] . '#' . $titulo . '#' . $categoria . '#' . $descricao . PHP_EOL;
 
-    //Fechando o arquivo
-    fclose($arquivo);
 
-    //echo $texto;
-    header('Location: abrir_chamado.php')
+	//abrindo o arquivo
+	$arquivo = fopen('../../app_help_desk/arquivo.hd', 'a');
+	//escrevendo o texto
+	fwrite($arquivo, $texto);
+	//fechando o arquivo
+	fclose($arquivo);
+
+	//echo $texto;
+	header('Location: abrir_chamado.php');
+	
 ?>
