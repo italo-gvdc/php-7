@@ -1,7 +1,5 @@
 <?php 
-
 	//print_r($_POST);
-
 	class mensagem {
 		private $para = null;
 		private $assunto = null;
@@ -23,7 +21,6 @@
 			return true;
 		}
 	}
-
 	$mensagem = new Mensagem();
 
 	$mensagem->__set('para', $_POST['para']);
