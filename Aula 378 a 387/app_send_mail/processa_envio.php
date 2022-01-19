@@ -37,7 +37,7 @@
 	$mensagem->__set('assunto', $_POST['assunto']);
 	$mensagem->__set('mensagem', $_POST['mensagem']);
 
-	//print_r($mensagem);
+	print_r($mensagem);
 
 	if(!$mensagem->mensagemValida()) {
 		echo 'Mensagem não é valida';
@@ -59,7 +59,7 @@
 
     //Destinatários 
     $mail -> setFrom ( 'italoteste2022@gmail.com' , 'Web completo remetente' );
-    $mail -> addAddress ( 'italoteste2022@gmail.com' , 'Web completo destinatario' );     //Adiciona um destinatário  
+    $mail -> addAddress ($mensagem->__get('para'));     //Adiciona um destinatário  
     //$mail -> addReplyTo ( 'info@example.com' , 'Information' );
     //$mail -> addCC ( );
     //$mail -> addBCC ( 'bcc@example.com' );
@@ -70,7 +70,7 @@
 
     //Conteúdo 
     $mail -> isHTML ( true );                                  //Defina o formato do email para HTML 
-    $mail -> Subject = 'Oi. eu sou o assunto' ;
+    $mail -> Subject = $mensagem->__get('assunto') ;
     $mail -> Body    = 'Oi. eu sou o conteudo do <strong>e-mail</strong>' ;
     $mail -> AltBody = 'Oi. eu sou o conteudo do e-mail' ;
 
