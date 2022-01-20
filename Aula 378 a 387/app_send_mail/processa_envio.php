@@ -71,8 +71,8 @@
     //Conteúdo 
     $mail -> isHTML ( true );                                  //Defina o formato do email para HTML 
     $mail -> Subject = $mensagem->__get('assunto') ;
-    $mail -> Body    = 'Oi. eu sou o conteudo do <strong>e-mail</strong>' ;
-    $mail -> AltBody = 'Oi. eu sou o conteudo do e-mail' ;
+    $mail -> Body    = $mensagem->__get('mensagem');
+    $mail -> AltBody = 'É necessario ultilizar um client que suporte HTML para ter acesso total ao conteudo dessa mensagem';
 
     $mail -> enviar();
     echo  'Mensagem enviada' ;
