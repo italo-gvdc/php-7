@@ -14,6 +14,7 @@
 		private $para = null;
 		private $assunto = null;
 		private $mensagem = null;
+		public $status = array('codigo_status')
 
 		public function __get($atributo) {
 			return $this->$atributo;
@@ -41,7 +42,7 @@
 
 	if(!$mensagem->mensagemValida()) {
 		echo 'Mensagem não é valida';
-		die();
+		header('location: index.php');
 	}
 
 	$mail = new  PHPMailer ( true );
