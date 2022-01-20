@@ -44,7 +44,6 @@
 		die();
 	}
 
-
 	$mail = new  PHPMailer ( true );
 	try {
      //Configurações do servidor 
@@ -75,12 +74,8 @@
     $mail -> AltBody = 'É necessario ultilizar um client que suporte HTML para ter acesso total ao conteudo dessa mensagem';
 
     $mail -> enviar();
-    echo  'Mensagem enviada' ;
+    echo  'E-mail enviado com sucesso' ;
 
 } catch ( Exception  $e ) {
     echo  "A mensagem não pôde ser enviada. Erro do Mailer: {$mail->ErrorInfo}" ;
 }
-
-
-//echo 'Não foi possivel enviar esse e-mail! Por favor tente novamente mais tarde';
-//echo 'Detalhes do erro: ' . $mail->errorInfo;
