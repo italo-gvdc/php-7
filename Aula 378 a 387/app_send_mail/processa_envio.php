@@ -84,3 +84,11 @@
 	    $mensagem->status['descrição_status'] = 'A mensagem não pôde ser enviada. Erro do Mailer: {$mail->ErrorInfo} Detalhe do erro: ' . $mail->Errorinfo;
 	}
 ?>
+
+<html>
+	<head>
+	</head>
+
+	<body>
+	</body>
+</html>
