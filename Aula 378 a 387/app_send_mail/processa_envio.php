@@ -77,9 +77,10 @@
     $mail -> enviar();
 
     $mensagem->status['codigo_status'] = 1;
-    $mensagem->status['descrição_status'] = 1;
-    echo  'E-mail enviado com sucesso' ;
+    $mensagem->status['descrição_status'] = 'E-mail enviado com sucesso';
 
-} catch ( Exception  $e ) {
-    echo  "A mensagem não pôde ser enviada. Erro do Mailer: {$mail->ErrorInfo}" ;
-}
+	} catch ( Exception  $e ) {
+		$mensagem->status['codigo_status'] = 2;
+	    $mensagem->status['descrição_status'] = 'A mensagem não pôde ser enviada. Erro do Mailer: {$mail->ErrorInfo} Detalhe do erro: ' . $mail->Errorinfo;
+	}
+?>
