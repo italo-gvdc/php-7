@@ -14,7 +14,7 @@
 		private $para = null;
 		private $assunto = null;
 		private $mensagem = null;
-		public $status = array('codigo_status')
+		public $status = array('codigo_status' => null, 'descrição_status' => '');
 
 		public function __get($atributo) {
 			return $this->$atributo;
@@ -75,6 +75,9 @@
     $mail -> AltBody = 'É necessario ultilizar um client que suporte HTML para ter acesso total ao conteudo dessa mensagem';
 
     $mail -> enviar();
+
+    $mensagem->status['codigo_status'] = 1;
+    $mensagem->status['descrição_status'] = 1;
     echo  'E-mail enviado com sucesso' ;
 
 } catch ( Exception  $e ) {
