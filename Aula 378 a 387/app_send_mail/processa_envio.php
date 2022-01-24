@@ -38,7 +38,7 @@
 	$mensagem->__set('assunto', $_POST['assunto']);
 	$mensagem->__set('mensagem', $_POST['mensagem']);
 
-	print_r($mensagem);
+	//print_r($mensagem);
 
 	if(!$mensagem->mensagemValida()) {
 		echo 'Mensagem não é valida';
@@ -48,7 +48,7 @@
 	$mail = new  PHPMailer ( true );
 	try {
      //Configurações do servidor 
-    $mail -> SMTPDebug = 2 ;               //Ativar saída de depuração detalhada 
+    $mail -> SMTPDebug = false;               //Ativar saída de depuração detalhada 
     $mail -> isSMTP ();                                       //Enviar usando SMTP 
     $mail -> Host = 'smtp-relay.gmail.com' ;                     //Configura o servidor SMTP para enviar através de 
     $mail -> SMTPAuth = true ;                               //Ativar autenticação SMTP 
@@ -106,13 +106,18 @@
 						<div class="container">
 							<h1 class="display-4 text-success">Sucesso</h1>
 							<p><?= $mensagem->status['descrição_status'] ?></p>
+							<a href="index.php" class="btn btn-success btn-lg mt-5 text-white">Voltar</a>
 						</div>
 
 					<? } ?>
 
 					<? if($mensagem->status['codigo_status'] == 2) { ?>
 
-						...
+						<div class="container">
+							<h1 class="display-4 text-danger">Ops!</h1>
+							<p><?= $mensagem->status['descrição_status'] ?></p>
+							<a href="index.php" class="btn btn-success btn-lg mt-5 text-white">Voltar</a>
+						</div>						
 
 					<? } ?>
 
