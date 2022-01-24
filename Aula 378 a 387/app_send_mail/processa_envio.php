@@ -103,6 +103,17 @@
 					
 					<? if($mensagem->status['codigo_status'] == 1) { ?>
 
+						<div class="container">
+							<h1 class="display-4 text-success">Sucesso</h1>
+							<p><?= $mensagem->status['descrição_status'] ?></p>
+						</div>
+
+					<? } ?>
+
+					<? if($mensagem->status['codigo_status'] == 2) { ?>
+
+						...
+
 					<? } ?>
 
 				</div>
